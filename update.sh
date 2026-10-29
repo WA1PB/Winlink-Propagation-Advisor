@@ -34,6 +34,14 @@ fi
 
 cd "$REPO"
 
+# Never prompt for GitHub credentials during automated updates.
+export GIT_TERMINAL_PROMPT=0
+
+# Always use the new public repository, even if origin points
+# to the old private repository.
+git remote set-url origin "$EXPECTED_REMOTE" ||
+    fail "Could not configure the public GitHub repository."
+
 echo "========================================"
 echo " Winlink Advisor Updater"
 echo "========================================"
@@ -105,7 +113,7 @@ echo "Backups created in: $backup"
 
 log "4/7" "Fetching the latest GitHub version..."
 
-git fetch origin ||
+GIT_TERMINAL_PROMPT=0 git -c credential.helper= fetch origin ||
     fail "Could not fetch from GitHub. Check network connectivity."
 
 if ! git show-ref --verify --quiet refs/remotes/origin/main; then
