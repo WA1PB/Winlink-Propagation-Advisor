@@ -73,7 +73,7 @@ The installer never displays the actual Winlink key.
 Clone or copy this repository onto the DigiPi.
 
 cd /home/pi
-git clone https://github.com/WA1PB/Winlink-Propagation-Advisor.git
+git clone https://github.com/WA1PB/Winlink-Propagation-Advisor.git winlink-advisor
 cd winlink-advisor
 sudo bash ./install.sh
 
