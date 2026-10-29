@@ -1,0 +1,427 @@
+WINLINK PROPAGATION ADVISOR
+User Guide and Explanation
+
+Author: Peter Busha — WA1PB
+
+============================================================
+PURPOSE AND DISCLAIMER
+============================================================
+
+The Winlink Propagation Advisor is a personal project created by
+Peter Busha (WA1PB) for fun, experimentation, education, and
+amateur-radio use.
+
+This software is provided as an experimental propagation-assistance
+tool. It is not an official Winlink product and is not affiliated
+with or endorsed by the Winlink Development Team, ARDC, PSKReporter,
+or any particular Winlink gateway operator.
+
+The information presented by the Advisor is intended to help an
+operator understand current radio propagation conditions and identify
+Winlink gateways that may be worth trying.
+
+The Advisor does NOT guarantee that a connection will be successful.
+
+Propagation can change rapidly. A gateway that appears to be an
+excellent choice may not answer, may be busy, may be offline, or may
+not be reachable when an actual connection is attempted.
+
+The operator is responsible for selecting frequencies, operating the
+radio, observing amateur-radio regulations, and deciding whether to
+attempt a connection.
+
+Use the information provided by this Advisor as guidance, not as a
+guarantee.
+
+============================================================
+WHAT THE ADVISOR DOES
+============================================================
+
+The Winlink Propagation Advisor combines two types of information:
+
+1. WSPR reception reports
+2. Winlink gateway information
+
+WSPR reports provide evidence of where signals from this station are
+currently being heard.
+
+Winlink gateway information identifies stations that may be available
+for Winlink connections on various bands and modes.
+
+The Advisor compares these two sets of information and attempts to
+identify Winlink gateways whose locations and operating modes are
+compatible with the propagation being observed.
+
+The goal is simple:
+
+    "Where is my signal currently being heard, and which Winlink
+     gateways are located in areas where propagation appears useful?"
+
+The Advisor is therefore a propagation-assistance tool, not a
+connection controller.
+
+============================================================
+BAND SELECTION
+============================================================
+
+The Advisor can examine individual amateur-radio bands from:
+
+    160m
+    80m
+    40m
+    30m
+    20m
+    17m
+    15m
+    12m
+    10m
+
+The BAND selector determines which WSPR propagation information is
+used when evaluating Winlink gateways.
+
+AUTO mode allows the Advisor to determine the most appropriate current
+WSPR band based on the most recent available WSPR reports.
+
+Because WSPR is normally transmitted on one band at a time, using the
+most recent band information can be more useful than combining old
+reports from several different bands.
+
+============================================================
+WINLINK MODE
+============================================================
+
+The MODE selector allows the results to be limited to:
+
+    VARA
+    ARDOP
+    BOTH
+
+VARA displays Winlink gateways using the VARA HF protocol.
+
+ARDOP displays Winlink gateways using the ARDOP protocol.
+
+BOTH includes both types.
+
+============================================================
+WSPR PROPAGATION FOOTPRINT
+============================================================
+
+The WSPR Propagation Footprint summarizes where this station is
+currently being heard.
+
+The footprint is divided into geographic regions.
+
+Examples include:
+
+    Canada / North
+    Mountain / Southwest
+    West Coast
+    Northeast / Mid-Atlantic
+    Midwest
+    Central Plains
+    Southeast
+    Europe / Atlantic
+    Europe / Africa
+    Other
+
+The regional cards can be clicked.
+
+Clicking a region filters the Winlink gateway list so that only
+gateways located in that region are displayed.
+
+The selected region remains highlighted while the other regions fade
+into the background.
+
+Clicking the selected region again returns to the overall gateway
+ranking.
+
+============================================================
+WHAT IS A WSPR RECEIVER?
+============================================================
+
+A "receiver" in the Advisor is a unique WSPR receiving station that
+reported hearing this station's WSPR transmission.
+
+For example, if ten different amateur-radio stations report hearing
+WA1PB, the Advisor may show:
+
+    Receivers: 10
+
+This does NOT mean that ten Winlink gateways are available.
+
+It means that ten different WSPR receiving stations provided evidence
+about current propagation.
+
+Multiple WSPR reports from the same receiving station do not count as
+multiple receivers.
+
+The number of receivers is therefore an indication of how broadly
+the signal is being heard.
+
+Generally:
+
+    More receivers = more propagation evidence
+
+However, more receivers does not automatically mean that every
+location between the transmitter and receiver will have a usable
+Winlink path.
+
+============================================================
+FRESH REPORTS
+============================================================
+
+WSPR reports have an age.
+
+A recent report is more useful for estimating current propagation than
+an older report.
+
+The Advisor therefore gives greater importance to recent reports.
+
+A "fresh" report is a recently received WSPR report within the
+Advisor's current freshness window.
+
+Propagation can change quickly, so fresh reports are generally more
+important than older reports.
+
+============================================================
+BEST AND AVERAGE SIGNAL
+============================================================
+
+The propagation information may include:
+
+    Best
+    Average
+
+BEST represents the strongest useful WSPR signal observed in the
+available evidence for the area or gateway.
+
+AVERAGE represents the average signal level of the supporting WSPR
+evidence.
+
+Signal strength is expressed in dB.
+
+A less-negative value generally represents a stronger received signal.
+
+For example:
+
+    -5 dB is stronger than -15 dB.
+
+These values are observations of WSPR reception and should not be
+interpreted as a guarantee of Winlink connection quality.
+
+============================================================
+GATEWAY CARDS
+============================================================
+
+Each Winlink gateway recommendation is presented as a gateway card.
+
+A typical card contains information such as:
+
+    Rank
+    Callsign
+    Grid
+    Frequency
+    Band
+    Mode
+    Score
+    Receivers
+    Signal information
+    Other propagation information
+
+The CALLSIGN identifies the Winlink gateway.
+
+The GRID identifies the gateway's Maidenhead grid location.
+
+The FREQUENCY is the frequency associated with the Winlink channel.
+
+The BAND identifies the amateur-radio band.
+
+The MODE identifies the Winlink protocol, such as VARA or ARDOP.
+
+============================================================
+RANKING
+============================================================
+
+The Advisor assigns each gateway a propagation score.
+
+The score is intended to help sort gateways from more promising to
+less promising choices based on the available propagation evidence.
+
+The score considers several factors, including:
+
+    - Current WSPR reception
+    - Number of unique WSPR receivers
+    - Signal strength
+    - Age of the WSPR reports
+    - Band compatibility
+    - Geographic evidence
+    - Distance to the Winlink gateway
+
+The score is a relative ranking tool.
+
+It should NOT be interpreted as:
+
+    "A score of 40 guarantees a connection."
+
+Instead, it means approximately:
+
+    "Based on the information currently available, this gateway
+     appears more promising than gateways with lower scores."
+
+============================================================
+DISTANCE
+============================================================
+
+Gateway distance is calculated geographically from the station grid
+to the gateway grid.
+
+Distance is displayed in kilometers.
+
+Distance is only one part of the Advisor's evaluation.
+
+A closer gateway is NOT necessarily a better gateway.
+
+HF propagation can produce skip zones, long-distance paths, and other
+conditions where a more distant gateway may actually provide a better
+path.
+
+For this reason, the Advisor does not simply rank gateways by
+distance.
+
+============================================================
+REGIONAL RANKING
+============================================================
+
+The normal gateway list shows the overall ranking.
+
+When a region is selected from the WSPR Propagation Footprint, the
+gateway list is filtered to that region.
+
+The gateways in the selected region are then displayed as a regional
+Top 10.
+
+For example, a gateway that is ranked #45 in the overall list might
+become:
+
+    #1
+
+when its region is selected.
+
+This does NOT mean its propagation score changed.
+
+It means that it is currently the highest-ranked gateway among the
+gateways in that selected region.
+
+============================================================
+DATA AGE
+============================================================
+
+The Advisor displays when its current result was generated.
+
+For example:
+
+    Updated just now
+
+or:
+
+    Updated 5 minutes ago
+
+This describes the age of the Advisor's current result, not the age
+of every individual WSPR report.
+
+Individual WSPR reports can have different ages.
+
+Always consider the age of the underlying propagation evidence when
+evaluating a recommendation.
+
+============================================================
+IMPORTANT LIMITATIONS
+============================================================
+
+The Advisor cannot predict HF propagation with certainty.
+
+WSPR reception is useful evidence, but WSPR and Winlink are different
+applications with different operating characteristics.
+
+A WSPR report proves that a signal was received somewhere.
+
+It does not prove that a reliable two-way Winlink connection will
+work between two particular stations.
+
+Other factors can affect a Winlink connection, including:
+
+    - Changing propagation
+    - Solar and ionospheric conditions
+    - Noise
+    - Local interference
+    - Antenna characteristics
+    - Transmitter power
+    - Receiver performance
+    - Gateway availability
+    - Gateway busy status
+    - Frequency occupancy
+    - Equipment configuration
+    - Operator conditions
+
+The Advisor should therefore be treated as a decision-support tool.
+
+============================================================
+PAT AND WINLINK
+============================================================
+
+The Advisor can help an operator identify a promising Winlink
+gateway, but it does not replace PAT.
+
+The normal operating workflow is:
+
+    1. Review the Advisor.
+    2. Select a promising band, region, and gateway.
+    3. Open PAT.
+    4. Review the connection information.
+    5. Attempt the Winlink connection using the operator's normal
+       procedure.
+
+The Advisor is intended to help answer:
+
+    "Which gateway should I try?"
+
+It is not intended to automatically make that decision for the
+operator.
+
+============================================================
+WHY USE WSPR?
+============================================================
+
+WSPR is useful because many amateur-radio stations continuously
+monitor WSPR transmissions and report what they hear.
+
+This creates a large distributed network of receiving stations.
+
+The Advisor uses those reports as real-world evidence of where this
+station's signal is currently propagating.
+
+Instead of relying only on theoretical propagation predictions, the
+Advisor asks:
+
+    "Where is my actual signal being heard right now?"
+
+That information can then be compared with the locations of Winlink
+gateways.
+
+============================================================
+FINAL NOTE
+============================================================
+
+This project was created by Peter Busha — WA1PB as an amateur-radio
+experiment and educational project.
+
+The purpose is to explore the relationship between WSPR reception,
+HF propagation, and Winlink gateway selection.
+
+Have fun experimenting, verify the information yourself, and remember
+that amateur-radio propagation is always subject to change.
+
+73,
+
+Peter Busha
+WA1PB

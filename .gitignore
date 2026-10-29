@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime data
+score_log.jsonl
+
+# Local backups
+*.bak
+*.bak*
+*.before-*
+*.pre-live
+*.score-backup
+*.score-v2-backup
+
+# Local configuration / secrets
+localize.env
+*.env
+
+# OS/editor files
+.DS_Store
+*~
+*.swp
+*.swo
+
+# Local backups — never publish
+backups/
